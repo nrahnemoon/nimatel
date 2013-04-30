@@ -1,3 +1,82 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.nm-home--main {
+	background: #ff3232; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, #ff3232 4%, #7f1919 99%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(4%,#ff3232), color-stop(99%,#7f1919)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, #ff3232 4%,#7f1919 99%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, #ff3232 4%,#7f1919 99%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover, #ff3232 4%,#7f1919 99%); /* IE10+ */
+	background: radial-gradient(ellipse at center, #ff3232 4%,#7f1919 99%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3232', endColorstr='#7f1919',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+	display: block;
+	.carousel {
+		float:none;
+  	margin: 0px auto;
+		.nm-home--carousel {
+			height: 360px;
+			padding: 20px 0px 0px;
+			float:none;
+	  	margin: 0px auto;
+			.item {
+		  	.nm-home--about {
+					img {
+						margin: 40px 30px;
+					}
+					.nm-home--about-text-container {
+						margin: 30px 0px;
+						h1 {
+							color: white;
+							margin: 30px 0px;
+						}
+						a {
+							margin: 0px 50px;
+						}
+					}
+					font-family: 'Montserrat', sans-serif;
+					font-weight: 400;
+		  	}
+		  	.nm-home--locations {
+		  		.nm-home--locations-text {
+		  			color: white;
+						font-family: 'Montserrat', sans-serif;
+						font-weight: 400;
+			  		h1 {
+							margin: 40px 0px 30px;
+			  		}
+			  		a {
+			  			display: block;
+			  			text-align: center;
+			  		}
+			  		p {
+			  			display: block;
+			  			margin: 30px 0px;
+			  			text-align: center;
+			  			margin: 14px 0px;
+			  			color: white;
+			  			font-size: 14px;
+			  		}
+			  	}
+		  	}
+		  	.nm-home--pay-as-you-go {
+		  		img {
+		  			margin: 20px 0px;
+		  		}
+		  		h1 {
+		  			margin: 40px 0px 0px;
+		  			padding: 10px 0px 20px;
+		  		}
+		  		a {
+		  			display: block;
+			  		text-align: center;
+			  		width:50%;
+			  		margin: 0% 25%;
+		  		}
+		  		color: white;
+					font-size: 20px;
+					font-family: 'Montserrat', sans-serif;
+					font-weight: 400;
+		  	}
+			}
+		}
+	}
+}

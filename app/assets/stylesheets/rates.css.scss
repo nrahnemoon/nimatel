@@ -1,0 +1,45 @@
+.nm-rates--main {
+	width: 100%;
+	float: none;
+	margin: 20px auto;
+	display: block;
+	.nm-rates--search-tool {
+		float: none;
+		margin: 0px auto;
+		background-color: white;
+		display: block;
+		input {
+			margin: 20px 0px;
+			width: 50%;
+		}
+	}
+	.nm-rates--country-table {
+		float: none;
+		margin: 0px auto;
+		table {
+			margin: 0px 0px 20px;
+			text-align: center;
+			tbody {
+				overflow: auto;
+				height: 300px !important;
+				tr {
+					width: 100%;
+					.country-image {
+						width: 48px;
+					}
+					.country-name {
+						margin: 18px 10px;
+						width: 300px;
+					}
+					td {
+						vertical-align: middle;
+						color: #1874CD;
+						font-size: 20px;
+						font-family: 'Montserrat', sans-serif;
+						font-weight: 400;
+					}
+				}
+			}
+		}
+	}
+}

@@ -26,7 +26,12 @@
 			margin: 0px 15px;
 			font-family: 'Montserrat', sans-serif;
 			font-weight: 400;
+			a, a:visited {
+				color: #0066CC;
+			}
 			a:hover {
+				color: #003399;
+				background: none;
 				text-decoration: none;
 			}
 		}

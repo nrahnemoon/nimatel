@@ -1,9 +1,14 @@
 Nimatel::Application.routes.draw do
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
   scope :controller => :home do
-    match "/rates" => :rates, :as => :rates
+    match "rates" => :rates, :as => :rates
+    match "about" => :about, :as => :about
+    get "contact" => :contact_get, :as => :contact
+    post "contact" => :contact_post, :as => :contact_post
+    put "contact" => :contact_post, :as => :contact_post
   end
 
   # Sample of regular route:

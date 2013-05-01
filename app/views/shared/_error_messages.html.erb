@@ -1,0 +1,15 @@
+<% if target.errors.any? %>
+	<div class="<%= flash_class(:error) %>">
+		<ul>
+			<% target.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+<% flash.each do |key, value| %>
+	<div class="<%= flash_class(key) %>">
+		<%= value %>
+	</div>
+<% end %>

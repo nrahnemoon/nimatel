@@ -1,0 +1,51 @@
+<%= form_for @contact_email, :url => { :controller => :home, :action => :contact_post } do |f| %>
+  <%= render "shared/error_messages", :target => @contact_email, :flash => flash %>
+  <div class="row nm-contact--form-section">
+    <div class="span1"><%= f.label :name, "Name"  %></div>
+    <div class="span3"><%= f.text_field :name, :class => "text_field" %></div>
+  </div>
+
+  <div class="row field nm-contact--form-section">
+    <div class="span1"><%= f.label :email, "Email"  %></div>
+    <div class="span3"><%= f.text_field :email, :class => "text_field" %></div>
+  </div>
+
+  <div class="row field nm-contact--form-section">
+    <div class="span1"><%= f.label :pin, "Card # (optional)" %></div>
+    <div class="span3"><%= f.text_field :pin, :class => "text_field" %></div>
+  </div>
+
+  <div class="row nm-contact--form-section">
+    <div class="span1"><%= f.label :purpose, "Purpose"  %></div>
+    <div class="span4">
+      <div class="radio_container">
+        <%= f.radio_button :purpose, ContactEmail::PURPOSE[:general_feedback] %>
+        <%= label :purpose_general_feedback, "General Feedback" %>
+      </div>
+      <div class="radio_container">
+        <%= f.radio_button :purpose, ContactEmail::PURPOSE[:customer_support] %>
+        <%= label :purpose_customer_support, "Customer Support" %>
+      </div>
+      <div class="radio_container">
+        <%= f.radio_button :purpose, ContactEmail::PURPOSE[:partnership_inquiry] %>
+        <%= label :purpose_partnership_inquiry, "Partnership Inquiry" %>
+      </div>
+      <div class="radio_container">
+        <%= f.radio_button :purpose, ContactEmail::PURPOSE[:investment_inquiry] %>
+        <%= label :purpose_investment_inquiry, "Investment Inquiry" %>
+      </div>
+      <div class="radio_container">
+        <%= f.radio_button :purpose, ContactEmail::PURPOSE[:other] %>
+        <%= label :purpose_other, "Other" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row field nm-contact--form-section">
+    <div class="span1"><%= f.label :message, "Message"  %></div>
+    <div class="span4"><%= f.text_area :message %></div>
+  </div>
+  <div class="row nm-contact--form-section">
+    <div><%= f.submit "Submit", :class => "btn btn-primary" %></div>
+  </div>
+<% end %>

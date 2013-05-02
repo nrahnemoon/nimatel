@@ -1,0 +1,21 @@
+.nm-terms--main {
+	width: 100%;
+	float: none;
+	font-family: 'Montserrat', sans-serif;
+	margin: 20px auto 60px;
+	display: block;
+	.nm-terms--text-container {
+		float: none;
+		margin: 0px auto;
+		.nm-terms--text {
+			margin: 20px 0px 0px 0px;
+			h2 {
+				font-size: 25px;
+				margin: 20px 0px 10px 0px;
+			}
+			.nm-terms--section-item {
+				margin: 0px 0px 20px 40px;
+			}
+		}
+	}
+}

@@ -10,6 +10,7 @@ Nimatel::Application.routes.draw do
     post "contact" => :contact_post, :as => :contact_post
     put "contact" => :contact_post, :as => :contact_post
     match "access" => :access, :as => :accesss
+    match "terms" => :terms, :as => :terms
   end
 
   # Sample of regular route:

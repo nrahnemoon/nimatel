@@ -1,0 +1,52 @@
+.nm-access--main {
+	width: 100%;
+	display: block;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	.nm-access--text-container {
+		float: none;
+		margin: 20px auto;
+		.nm-access--phone-number-container {
+			margin: 40px 0px 30px 20px;
+			text-align: center;
+			p {
+				margin: 40px 0px;
+				font-size: 16px;
+			}
+			.nm-access--phone-number {
+				font-family: 'Quicksand', sans-serif;
+				h2 {
+					.phone_symbol {
+						position: relative;
+						top: -20px;
+						left: -20px;
+						display: block;
+						float: left;
+						border-right: white;
+						padding: 20px;
+						border-right-style: solid;
+						vertical-align: middle;
+					}
+					width: 480px;
+					font-size: 50px;
+					font-family: 'Cantora One', sans-serif;
+					padding: 20px;
+					margin: 0px 200px;
+					border-radius:25px;
+					border-style:solid;
+					border-width: 2px;
+					display: block;
+					color: white;
+					background: #54a5ce; /* Old browsers */
+					background: -moz-radial-gradient(center, ellipse cover,  #54a5ce 0%, #0089d1 100%); /* FF3.6+ */
+					background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#54a5ce), color-stop(100%,#0089d1)); /* Chrome,Safari4+ */
+					background: -webkit-radial-gradient(center, ellipse cover,  #54a5ce 0%,#0089d1 100%); /* Chrome10+,Safari5.1+ */
+					background: -o-radial-gradient(center, ellipse cover,  #54a5ce 0%,#0089d1 100%); /* Opera 12+ */
+					background: -ms-radial-gradient(center, ellipse cover,  #54a5ce 0%,#0089d1 100%); /* IE10+ */
+					background: radial-gradient(ellipse at center,  #54a5ce 0%,#0089d1 100%); /* W3C */
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#54a5ce', endColorstr='#0089d1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+				}
+			}
+		}
+	}
+}

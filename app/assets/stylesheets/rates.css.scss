@@ -1,43 +1,46 @@
 .nm-rates--main {
 	width: 100%;
 	float: none;
-	margin: 20px auto;
+	font-family: 'Montserrat', sans-serif;
+	margin: 20px auto 50px;
 	display: block;
-	.nm-rates--search-tool {
+	.nm-rates--text-container {
 		float: none;
 		margin: 0px auto;
-		background-color: white;
-		display: block;
-		input {
-			margin: 20px 0px;
-			width: 50%;
+		.nm-rates--search-tool {
+			background-color: white;
+			display: block;
+			margin: 40px 0px 10px 40px;
+			input {
+				width: 50%;
+			}
 		}
-	}
-	.nm-rates--country-table {
-		float: none;
-		margin: 0px auto;
-		table {
-			margin: 0px 0px 20px;
-			text-align: center;
-			tbody {
-				overflow: auto;
-				height: 300px !important;
-				tr {
-					width: 100%;
-					height: 65px;
-					.country-image {
-						width: 48px;
-					}
-					.country-name {
-						margin: 18px 10px;
-						width: 300px;
-					}
-					td {
-						vertical-align: middle;
-						color: #1874CD;
-						font-size: 20px;
-						font-family: 'Montserrat', sans-serif;
-						font-weight: 400;
+		.nm-rates--country-table {
+			float: none;
+			margin: 0px auto 0px 60px;
+			table {
+				margin: 0px 0px 20px;
+				text-align: center;
+				tbody {
+					overflow: auto;
+					height: 300px !important;
+					tr {
+						width: 100%;
+						height: 65px;
+						.country-image {
+							width: 48px;
+						}
+						.country-name {
+							margin: 18px 10px;
+							width: 300px;
+						}
+						td {
+							vertical-align: middle;
+							color: #1874CD;
+							font-size: 20px;
+							font-family: 'Montserrat', sans-serif;
+							font-weight: 400;
+						}
 					}
 				}
 			}

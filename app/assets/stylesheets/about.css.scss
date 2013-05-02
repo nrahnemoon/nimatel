@@ -1,0 +1,59 @@
+.nm-about--main {
+	width: 100%;
+	display: block;
+	.bold {
+		font-weight: bold;
+	}
+	.italic {
+		font-style: italic;
+	}
+
+
+	.nm-about--mission-quote {
+		color: #3399FF;
+		font-size: 250%;
+		font-family: 'Quicksand', sans-serif;
+		margin: 30px 0px;
+		text-align: center;
+	}
+	.nm-about--product-text {
+		float: none;
+		margin: 0px auto;
+	}
+	.nm-about--text-container {
+		float: none;
+		margin: 20px auto 50px;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 400;
+		.nm-about--text-section {
+			img {
+				display: inline-block;
+			}
+			.nm-about--nimatel-card-image {
+				float: right;
+				margin: 10px 0px 0px 20px;
+			}
+			.nm-about--generic-card-image {
+				float: left;
+				margin: 20px 20px 0px 0px;
+			}
+			margin: 30px 0px 20px 0px;
+			.title {
+				font-size: 75%;
+				color: #000080;
+			}
+			.name {
+				color: #C11B17;
+			}
+			img {
+				display: inline-block;
+				float: left;
+				margin: 0px 30px 20px 0px;
+				vertical-align: middle;
+			}
+			.nm-about--profile-text {
+				margin: 20px 0px 40px 40px;
+			}
+		}
+	}
+}

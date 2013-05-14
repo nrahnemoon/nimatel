@@ -22,7 +22,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'thin'
 gem 'hirb'
 
 # To use ActiveModel has_secure_password

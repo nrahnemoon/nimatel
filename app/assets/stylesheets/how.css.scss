@@ -1,0 +1,18 @@
+.nm-how--main {
+	width: 100%;
+	float: none;
+	font-family: 'Montserrat', sans-serif;
+	margin: 20px auto 50px;
+	display: block;
+	.nm-how--text-container {
+		float: none;
+		margin: 0px auto;
+		.tabbable {
+			.nav-tabs {
+				margin: 0px;
+			}
+			.tab-pane {
+				border-style: solid;
+			}
+	}
+}

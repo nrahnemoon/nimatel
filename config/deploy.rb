@@ -6,7 +6,7 @@ on :load do
   set :application, rubber_env.app_name
   set :runner,      rubber_env.app_user
   set :deploy_to,   "/mnt/#{application}-#{Rubber.env}"
-  set :copy_exclude, [".git/*", ".bundle/*", "log/*", ".rvmrc"]
+  set :copy_exclude, [".git/*", ".bundle/*", "log/*", ".rvmrc", ".rbenv-version"]
 end
 
 # Use a simple directory tree copy here to make demo easier.
@@ -35,6 +35,9 @@ set :push_instance_config, Rubber.env != 'production'
 
 # don't waste time bundling gems that don't need to be there 
 set :bundle_without, [:development, :test, :staging] if Rubber.env == 'production'
+
+# NIMA_CHANGED
+set :assets_role, [:app]
 
 # Allow us to do N hosts at a time for all tasks - useful when trying
 # to figure out which host in a large set is down:

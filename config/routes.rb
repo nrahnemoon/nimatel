@@ -13,7 +13,6 @@ Nimatel::Application.routes.draw do
     match "terms" => :terms, :as => :terms
     match "how" => :how, :as => :how
   end
-
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

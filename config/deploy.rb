@@ -36,9 +36,6 @@ set :push_instance_config, Rubber.env != 'production'
 # don't waste time bundling gems that don't need to be there 
 set :bundle_without, [:development, :test, :staging] if Rubber.env == 'production'
 
-# NIMA_CHANGED
-set :assets_role, [:app]
-
 # Allow us to do N hosts at a time for all tasks - useful when trying
 # to figure out which host in a large set is down:
 # RUBBER_ENV=production MAX_HOSTS=1 cap invoke COMMAND=hostname

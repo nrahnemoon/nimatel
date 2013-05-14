@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Nimatel::Application.config.secret_token = 'a890598d21a3bc2c87f2c6b3f435816d807d139689866fe45161237524f908e4826173759b9fd15229a3044a52582a3fea7e451c1b52654cf3189516f46f9998'
+Nimatel::Application.config.secret_token = '5bae185e331a9a988d0cbf1b90f17b4d22641ded3ab97f9a592b052ac2c8142d6385126723852aa420fd0855342125da748adeacd906c14f5da27904cb75036e'

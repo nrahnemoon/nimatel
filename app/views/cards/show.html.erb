@@ -1,0 +1,19 @@
+<div class="nm-cards--main">
+  <div class="nm-cards--text-container span10">
+		<p id="notice"><%= notice %></p>
+
+		<p>
+		  <b>Pin:</b>
+		  <%= @card.pin %>
+		</p>
+
+		<p>
+		  <b>Balance:</b>
+		  <%= @card.balance %>
+		</p>
+
+
+		<%= link_to 'Edit', edit_card_path(@card) %> |
+		<%= link_to 'Back', cards_path %>
+	</div>
+</div>

@@ -11,3 +11,15 @@
  *= require_self
  *= require_tree .
  */
+
+.nm-application--main {
+	width: 100%;
+	float: none;
+	font-family: 'Montserrat', sans-serif;
+	margin: 20px auto 50px;
+	display: block;
+	.nm-application--text-container {
+		float: none;
+		margin: 0px auto;
+	}
+}

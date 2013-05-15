@@ -5,3 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+puts "Seeding..."
+
+# Disable attr_accessible in seed
+module ActiveModel
+  module MassAssignmentSecurity
+    class Sanitizer
+      def sanitize(attributes, authorizer)
+        attributes
+      end
+    end
+  end
+end
+

@@ -1,0 +1,12 @@
+// Place all the styles related to the Cards controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.nm-cards--main {
+	width: 100%;
+	display: block;
+	.nm-cards--text-container {
+		float: none;
+		margin: 20px auto 50px;
+	}
+}

@@ -1,5 +1,10 @@
 Nimatel::Application.routes.draw do
 
+  resources :cards
+
+
+  get "admin/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -13,6 +18,14 @@ Nimatel::Application.routes.draw do
     match "terms" => :terms, :as => :terms
     match "how" => :how, :as => :how
   end
+
+  scope :controller => :admin, :constraints => {:subdomain => 'admin' } do
+    match "/" => :index
+    match "logs" => :logs, :as => :logs
+  end
+
+  resources :cards, :constraints => {:subdomain => 'admin'}
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

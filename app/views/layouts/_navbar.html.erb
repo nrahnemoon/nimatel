@@ -3,10 +3,17 @@
 		<div class="navbar-inner">
 			<div class="nav-items span10 row">
 				<%= link_to "", root_path, :class=>"logo pull-left" %>
-				<ul class="nav pull-right">
-					<li><a href="/rates">Rates</a></li>
-					<li><a href="/access">Access number</a></li>
-			  </ul>
+				<% if request.subdomain != "admin" %>
+					<ul class="nav pull-right">
+						<li><a href="/rates">Rates</a></li>
+						<li><a href="/access">Access number</a></li>
+				  </ul>
+				 <% else %>
+					<ul class="nav pull-right">
+						<li><a href="/cards">Cards</a></li>
+						<li><a href="/logs">Call Logs</a></li>
+				  </ul>
+				 <% end %>
 			</div>
 	  </div>
 	</div>

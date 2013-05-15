@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130515112058) do
+ActiveRecord::Schema.define(:version => 20130515202721) do
 
   create_table "cards", :force => true do |t|
     t.string   "pin"
-    t.float    "balance"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.decimal  "balance",    :precision => 8, :scale => 2
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
   end
 
   create_table "contact_emails", :force => true do |t|

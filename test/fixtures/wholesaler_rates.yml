@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  country: MyString
+  description: MyString
+  rate: 9.99
+  billing_increment: 9.99
+  min_charge: 9.99
+
+two:
+  country: MyString
+  description: MyString
+  rate: 9.99
+  billing_increment: 9.99
+  min_charge: 9.99

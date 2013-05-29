@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130515202721) do
+ActiveRecord::Schema.define(:version => 20130528184206) do
 
   create_table "cards", :force => true do |t|
     t.string   "pin"
@@ -28,6 +28,59 @@ ActiveRecord::Schema.define(:version => 20130515202721) do
     t.string   "message"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "countries", :force => true do |t|
+    t.string   "name"
+    t.string   "country_code"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "sound_file"
+    t.string   "image_file"
+  end
+
+  create_table "regions", :force => true do |t|
+    t.string   "name"
+    t.string   "region_code"
+    t.integer  "country_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "wholesaler_prefixes", :force => true do |t|
+    t.string   "prefix"
+    t.integer  "wholesaler_rate_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  create_table "wholesaler_rates", :force => true do |t|
+    t.string   "country"
+    t.string   "description"
+    t.decimal  "rate",              :precision => 12, :scale => 8
+    t.decimal  "billing_increment"
+    t.decimal  "min_charge"
+    t.integer  "wholesaler_id"
+    t.datetime "created_at",                                       :null => false
+    t.datetime "updated_at",                                       :null => false
+  end
+
+  create_table "wholesalers", :force => true do |t|
+    t.string   "name"
+    t.string   "ip"
+    t.string   "username"
+    t.string   "password"
+    t.string   "auth_id"
+    t.string   "auth_secret"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end

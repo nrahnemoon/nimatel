@@ -33,4 +33,10 @@ class HomeController < ApplicationController
       end
     end
 	end
+
+  private
+
+  def use_https?
+    false
+  end
 end

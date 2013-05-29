@@ -1,9 +1,8 @@
 Nimatel::Application.routes.draw do
 
-  resources :cards
+  resources :countries
 
-
-  get "admin/index"
+  resources :cards, :constraints => {:subdomain => 'admin'}
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -24,7 +23,11 @@ Nimatel::Application.routes.draw do
     match "logs" => :logs, :as => :logs
   end
 
-  resources :cards, :constraints => {:subdomain => 'admin'}
+  get "login" => "sessions#new", :as => :login
+  post "login" => "sessions#destroy", :as => :login
+  match "logout" => "sessions#destroy", :as => :logout
+  get "register" => "users#new", :as => :register
+  post "register" => "users#create", :as => :register
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

@@ -45,7 +45,15 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    columnize (0.3.6)
     commonjs (0.2.6)
+    debugger (1.2.4)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.1.1)
+      debugger-ruby_core_source (~> 1.1.7)
+    debugger-linecache (1.1.2)
+      debugger-ruby_core_source (>= 1.1.1)
+    debugger-ruby_core_source (1.1.7)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -148,6 +156,7 @@ DEPENDENCIES
   bcrypt-ruby
   capistrano
   coffee-rails (~> 3.2.1)
+  debugger
   hirb
   jquery-rails
   less-rails

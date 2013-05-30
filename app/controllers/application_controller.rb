@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   private
 
 	def https_redirect
+    debugger
     if !request.ssl?
       flash.keep
       redirect_to protocol: "https://", status: :moved_permanently

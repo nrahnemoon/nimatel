@@ -5,15 +5,10 @@ class ApplicationController < ActionController::Base
   private
 
 	def https_redirect
-    if request.ssl? && !use_https? || !request.ssl? && use_https?
-      protocol = request.ssl? ? "http" : "https"
+    if !request.ssl?
       flash.keep
-      redirect_to protocol: "#{protocol}://", status: :moved_permanently
+      redirect_to protocol: "https://", status: :moved_permanently
     end
-	end
-
-	def use_https?
-	  true # Override in other controllers
 	end
 
   def current_user

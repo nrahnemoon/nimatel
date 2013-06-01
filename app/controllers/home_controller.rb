@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   before_filter :https_redirect
 
   def index
+    redirect_to protocol: "https://", status: :moved_permanently
 	end
 
 	def rates

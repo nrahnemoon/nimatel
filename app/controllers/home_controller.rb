@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
+  before_filter :https_redirect
 
-	def index
+  def index
 	end
 
 	def rates

@@ -1,10 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :https_redirect
 
   private
 
   def https_redirect
+    logger.info "r = " if request.ssl?
     if !request.ssl?
       flash.keep
       redirect_to protocol: "https://", status: :moved_permanently

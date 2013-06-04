@@ -17,5 +17,5 @@
 /config/database.yml
 .DS_Store
 /db/schema.rb
-/db/retailers/US.zip
+/db/retailers
 

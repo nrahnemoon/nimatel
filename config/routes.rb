@@ -1,5 +1,8 @@
 Nimatel::Application.routes.draw do
 
+  resources :retailers
+
+
   resources :countries
 
   resources :cards, :constraints => {:subdomain => 'admin'}

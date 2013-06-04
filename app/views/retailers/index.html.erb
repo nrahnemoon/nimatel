@@ -1,0 +1,59 @@
+<h1>Listing retailers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Country</th>
+    <th>Gender</th>
+    <th>Phone number</th>
+    <th>Fax number</th>
+    <th>Contact</th>
+    <th>Contact title</th>
+    <th>Website</th>
+    <th>Num employees</th>
+    <th>Sales</th>
+    <th>Industry</th>
+    <th>Sic</th>
+    <th>Sic description</th>
+    <th>Email</th>
+    <th>Has calling card</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @retailers.each do |retailer| %>
+  <tr>
+    <td><%= retailer.name %></td>
+    <td><%= retailer.address %></td>
+    <td><%= retailer.city %></td>
+    <td><%= retailer.state %></td>
+    <td><%= retailer.zip %></td>
+    <td><%= retailer.country %></td>
+    <td><%= retailer.gender %></td>
+    <td><%= retailer.phone_number %></td>
+    <td><%= retailer.fax_number %></td>
+    <td><%= retailer.contact %></td>
+    <td><%= retailer.contact_title %></td>
+    <td><%= retailer.website %></td>
+    <td><%= retailer.num_employees %></td>
+    <td><%= retailer.sales %></td>
+    <td><%= retailer.industry %></td>
+    <td><%= retailer.sic %></td>
+    <td><%= retailer.sic_description %></td>
+    <td><%= retailer.email %></td>
+    <td><%= retailer.has_calling_card %></td>
+    <td><%= link_to 'Show', retailer %></td>
+    <td><%= link_to 'Edit', edit_retailer_path(retailer) %></td>
+    <td><%= link_to 'Destroy', retailer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Retailer', new_retailer_path %>

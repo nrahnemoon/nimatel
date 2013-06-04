@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130528184206) do
+ActiveRecord::Schema.define(:version => 20130604030359) do
 
   create_table "cards", :force => true do |t|
     t.string   "pin"
@@ -45,6 +45,30 @@ ActiveRecord::Schema.define(:version => 20130528184206) do
     t.integer  "country_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "retailers", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "country"
+    t.string   "gender"
+    t.string   "phone_number"
+    t.string   "fax_number"
+    t.string   "contact"
+    t.string   "contact_title"
+    t.string   "website"
+    t.integer  "num_employees"
+    t.string   "sales"
+    t.string   "industry"
+    t.string   "sic"
+    t.string   "sic_description"
+    t.string   "email"
+    t.boolean  "has_calling_card"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "users", :force => true do |t|

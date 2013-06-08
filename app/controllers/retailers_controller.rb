@@ -2,7 +2,7 @@ class RetailersController < ApplicationController
   # GET /retailers
   # GET /retailers.json
   def index
-    @retailers = Retailer.all
+    @retailers = Retailer.all.page(params[:page]).per(20)
 
     respond_to do |format|
       format.html # index.html.erb

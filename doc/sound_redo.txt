@@ -1,0 +1,2 @@
+redo invalid_entry.wav
+redo enter_pin_cc.wav

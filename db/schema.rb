@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130604030359) do
+ActiveRecord::Schema.define(:version => 20130608005907) do
 
   create_table "cards", :force => true do |t|
     t.string   "pin"
@@ -32,19 +32,22 @@ ActiveRecord::Schema.define(:version => 20130604030359) do
 
   create_table "countries", :force => true do |t|
     t.string   "name"
-    t.string   "country_code"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.string   "sound_file"
     t.string   "image_file"
+    t.string   "alpha2"
+    t.string   "alpha3"
   end
 
   create_table "regions", :force => true do |t|
     t.string   "name"
-    t.string   "region_code"
     t.integer  "country_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "prefix"
+    t.integer  "category"
+    t.string   "registrar"
   end
 
   create_table "retailers", :force => true do |t|
@@ -78,15 +81,7 @@ ActiveRecord::Schema.define(:version => 20130604030359) do
     t.datetime "updated_at",      :null => false
   end
 
-  create_table "wholesaler_prefixes", :force => true do |t|
-    t.string   "prefix"
-    t.integer  "wholesaler_rate_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-  end
-
   create_table "wholesaler_rates", :force => true do |t|
-    t.string   "country"
     t.string   "description"
     t.decimal  "rate",              :precision => 12, :scale => 8
     t.decimal  "billing_increment"
@@ -94,6 +89,7 @@ ActiveRecord::Schema.define(:version => 20130604030359) do
     t.integer  "wholesaler_id"
     t.datetime "created_at",                                       :null => false
     t.datetime "updated_at",                                       :null => false
+    t.string   "prefix"
   end
 
   create_table "wholesalers", :force => true do |t|

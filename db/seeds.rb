@@ -18,20 +18,3 @@ module ActiveModel
     end
   end
 end
-
-Wholesaler.create(
-	:name => "Gafachi",
-	:ip => "67.216.35.226",
-	:username => "nimatel",
-	:password => "g4f4ch1",
-	:auth_id => "a13959szfh8dNATl",
-	:auth_secret => "rSsXzt08PB8zlUdq"
-)
-
-Country.create(
-  :id => 1,
-  :name => "Afghanistan",
-  :country_code => "",
-  :sound_file => "",
-  :image_file => ""
-)

@@ -130,7 +130,5 @@ class Wholesaler < ActiveRecord::Base
         })
       end
     end
-  }
   end
-
 end

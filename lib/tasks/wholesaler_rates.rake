@@ -1,4 +1,6 @@
-require 'csv'
+require "uri"
+require "net/http"
+require "csv"
 
 # Run the following command in production after deploying
 # TODO: add this to cap deploy

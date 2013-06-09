@@ -108,7 +108,7 @@ namespace :rates do
 	    ratesCsv.each do |row|
 	    	params = row.to_hash
 	    	country = Country.find_by_sql("SELECT alpha2 FROM countries INNER JOIN regions ON countries.id = regions.country_id WHERE '" +
-	        	params["Code"] + "' LIKE CONCAT(prefix, '%') ORDER BY prefix DESC LIMIT 1;")
+	        	params["Code"] + "' LIKE prefix || '%' ORDER BY prefix DESC LIMIT 1;")
 	    	min_charge = "1"
 	    	billing_increment = "1"
 	    	if country == "MX"

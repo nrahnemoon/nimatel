@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130608005907) do
+ActiveRecord::Schema.define(:version => 20130610025438) do
 
   create_table "cards", :force => true do |t|
     t.string   "pin"
@@ -32,12 +32,23 @@ ActiveRecord::Schema.define(:version => 20130608005907) do
 
   create_table "countries", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.string   "sound_file"
     t.string   "image_file"
     t.string   "alpha2"
     t.string   "alpha3"
+    t.decimal  "landline_rate"
+    t.decimal  "mobile_rate"
+    t.decimal  "satellite_rate"
+  end
+
+  create_table "rates", :force => true do |t|
+    t.integer  "country_id"
+    t.integer  "category"
+    t.decimal  "value"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "regions", :force => true do |t|
@@ -90,6 +101,8 @@ ActiveRecord::Schema.define(:version => 20130608005907) do
     t.datetime "created_at",                                       :null => false
     t.datetime "updated_at",                                       :null => false
     t.string   "prefix"
+    t.integer  "category"
+    t.integer  "country_id"
   end
 
   create_table "wholesalers", :force => true do |t|

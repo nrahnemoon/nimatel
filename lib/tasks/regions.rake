@@ -4,8 +4,12 @@ require 'csv'
 # TODO: add this to cap deploy
 # /usr/bin/env bundle exec rake region RAILS_ENV=production
 desc "Import regions from csv file"
-task :regions => [:environment] do
-	CSV.foreach("db/numbering_plans/numbering_plans.csv", :headers => true)	do |row|
+task :regions => [:environment, :countries] do
+	file = Rails.env == "production" ?
+		"db/numbering_plans/numbering_plans.csv" :
+		"db/numbering_plans/numbering_plans.dev.csv"
+
+	CSV.foreach(file, :headers => true)	do |row|
 		country = Country.find_by_alpha2(sanitize(row[3]))
 		if !country
 			country = Country.create!({

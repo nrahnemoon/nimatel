@@ -28,24 +28,33 @@ namespace :rates do
       	ratesCsv.each do |row|
       		params = row.to_hash
         	if !params["Prefixes"]
+        		region = Region.find_by_sql("SELECT * FROM regions WHERE '" +
+	        		params["CountryCode"] + "' LIKE prefix || '%' ORDER BY prefix DESC LIMIT 1;").first;
           		rate = WholesalerRate.find_or_initialize_by_prefix(params["CountryCode"])
           		rate.update_attributes({
             		:description => params["Country"].encode('utf-8', 'iso-8859-1') + " " + params["Description"].encode('utf-8', 'iso-8859-1'),
             		:rate => params["Rate per minute"][1..-1],
             		:billing_increment => params["Billing increment (in seconds)"],
             		:min_charge => params["Minimum charge period (in seconds)"],
-            		:wholesaler_id => 1
+            		:wholesaler_id => 1,
+            		:category => region.category,
+            		:country_id => region.country_id
           		})
         	else
          		prefixes = params["Prefixes"].split("&")
           		prefixes.each do |prefix|
+          			region = Region.find_by_sql("SELECT * FROM regions WHERE '" +
+	        			params["CountryCode"] + prefix + "' LIKE prefix || '%' ORDER BY prefix DESC LIMIT 1;").first;
+
             		rate = WholesalerRate.find_or_initialize_by_prefix(params["CountryCode"] + prefix)
             		rate.update_attributes({
               			:description => params["Country"].encode('utf-8', 'iso-8859-1') + " " + params["Description"].encode('utf-8', 'iso-8859-1'),
               			:rate => params["Rate per minute"][1..-1],
               			:billing_increment => params["Billing increment (in seconds)"],
               			:min_charge => params["Minimum charge period (in seconds)"],
-              			:wholesaler_id => 1
+              			:wholesaler_id => 1,
+              			:category => region.category,
+              			:country_id => region.country_id
             		})
           		end
         	end
@@ -105,26 +114,32 @@ namespace :rates do
 	    resp = http.request(req)
 	    resp = resp.body
 	    ratesCsv = CSV.parse(resp, :headers => true)
+	    us_id = Country.find_by_alpha2("US").id
+	    mx_id = Country.find_by_alpha2("MX").id
 	    ratesCsv.each do |row|
 	    	params = row.to_hash
-	    	country = Country.find_by_sql("SELECT alpha2 FROM countries INNER JOIN regions ON countries.id = regions.country_id WHERE '" +
-	        	params["Code"] + "' LIKE prefix || '%' ORDER BY prefix DESC LIMIT 1;")
+	    	region = Region.find_by_sql("SELECT * FROM regions WHERE '" +
+	        	params["Code"] + "' LIKE prefix || '%' ORDER BY prefix DESC LIMIT 1;").first;
+
 	    	min_charge = "1"
 	    	billing_increment = "1"
-	    	if country == "MX"
+	    	if region.country_id == mx_id
 	    		min_charge = "60"
 	        	billing_increment = "60"
-	    	elsif country == "US"
+	    	elsif region.country_id == us_id
 	       		min_charge = "6"
 	         	billing_increment = "6"
 	    	end
+
 	    	rate = WholesalerRate.find_or_initialize_by_prefix(params["Code"])
 	    	rate.update_attributes({
 	    		:description => params["Location"].encode('utf-8', 'iso-8859-1'),
 	    		:rate => params["Bronze"][1..-1],
 	        	:billing_increment => billing_increment,
 	        	:min_charge => min_charge,
-	        	:wholesaler_id => 2
+	        	:wholesaler_id => 2,
+	        	:category => region.category,
+	        	:country_id => region.country_id
 	    	})
 		end
 	end

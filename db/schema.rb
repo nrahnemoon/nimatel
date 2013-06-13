@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130610025438) do
+ActiveRecord::Schema.define(:version => 20130613023719) do
 
   create_table "cards", :force => true do |t|
     t.string   "pin"
@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(:version => 20130610025438) do
     t.string   "prefix"
     t.integer  "category"
     t.integer  "country_id"
+    t.integer  "version"
   end
 
   create_table "wholesalers", :force => true do |t|

@@ -1,0 +1,15 @@
+# config/authorize_net.yml
+development:
+  mode: test
+  login: 5cZ2j4P6
+  key: 8594sT9R9yaYd32P
+
+test:
+  mode: test
+  login: 5cZ2j4P6
+  key: 8594sT9R9yaYd32P
+
+production:
+  mode: production
+  login: 7rV29R9y8Prc
+  key: 7Z3NfE4x24j33P27

@@ -10,10 +10,10 @@ task :countries => :environment do
 		"db/countries/countries.dev.csv"
 
 	CSV.foreach(file, :headers => true)	do |row|
-		country = Country.find_or_initialize_by_alpha2(row[1].encode('utf-8', 'iso-8859-1'))
+		country = Country.find_or_initialize_by_alpha2(row[1])
 		country.update_attributes({
-			:name => row[0].encode('utf-8', 'iso-8859-1'),
-			:alpha3 => row[2].encode('utf-8', 'iso-8859-1'),
+			:name => row[0],
+			:alpha3 => row[2],
 			:sound_file => row[3],
 			:image_file => row[4]
 		})

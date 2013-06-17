@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130613023719) do
+ActiveRecord::Schema.define(:version => 20130614214751) do
 
   create_table "cards", :force => true do |t|
     t.string   "pin"
     t.decimal  "balance",    :precision => 8, :scale => 2
     t.datetime "created_at",                               :null => false
     t.datetime "updated_at",                               :null => false
+    t.integer  "user_id"
   end
 
   create_table "contact_emails", :force => true do |t|
@@ -41,6 +42,24 @@ ActiveRecord::Schema.define(:version => 20130613023719) do
     t.decimal  "landline_rate"
     t.decimal  "mobile_rate"
     t.decimal  "satellite_rate"
+  end
+
+  create_table "payment_profiles", :force => true do |t|
+    t.integer  "brand"
+    t.string   "last_four"
+    t.integer  "exp_month"
+    t.integer  "exp_year"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "phone_numbers", :force => true do |t|
+    t.string   "number"
+    t.boolean  "remember"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
   end
 
   create_table "rates", :force => true do |t|
@@ -88,8 +107,10 @@ ActiveRecord::Schema.define(:version => 20130613023719) do
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.integer  "cim_profile_id"
+    t.integer  "default_payment_profile_id"
   end
 
   create_table "wholesaler_rates", :force => true do |t|

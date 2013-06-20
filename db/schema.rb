@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130614214751) do
+ActiveRecord::Schema.define(:version => 20130620011204) do
 
   create_table "cards", :force => true do |t|
     t.string   "pin"
@@ -50,16 +50,20 @@ ActiveRecord::Schema.define(:version => 20130614214751) do
     t.integer  "exp_month"
     t.integer  "exp_year"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+    t.string   "bin"
+    t.integer  "cim_payment_profile_id"
+    t.string   "card_code"
   end
 
   create_table "phone_numbers", :force => true do |t|
     t.string   "number"
     t.boolean  "remember"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.integer  "user_id"
+    t.string   "caller_id_name"
   end
 
   create_table "rates", :force => true do |t|
@@ -78,6 +82,15 @@ ActiveRecord::Schema.define(:version => 20130614214751) do
     t.string   "prefix"
     t.integer  "category"
     t.string   "registrar"
+  end
+
+  create_table "renewal_plans", :force => true do |t|
+    t.integer  "user_id"
+    t.boolean  "auto_renew"
+    t.decimal  "increment"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+    t.decimal  "min_balance", :precision => 8, :scale => 2
   end
 
   create_table "retailers", :force => true do |t|
@@ -102,6 +115,19 @@ ActiveRecord::Schema.define(:version => 20130614214751) do
     t.boolean  "has_calling_card"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  create_table "transactions", :force => true do |t|
+    t.integer  "user_id"
+    t.decimal  "amount"
+    t.integer  "item_id"
+    t.integer  "cim_profile_id"
+    t.integer  "payment_profile_id"
+    t.boolean  "completed"
+    t.boolean  "voided"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "phone_number_id"
   end
 
   create_table "users", :force => true do |t|

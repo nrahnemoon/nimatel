@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 	has_many :phone_numbers
 	has_many :payment_profiles
 	has_one :renewal_plan
+	has_many :transactions
 	has_secure_password
 	validates_presence_of :password, :on => :create
 end
